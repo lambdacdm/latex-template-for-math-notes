@@ -1,0 +1,100 @@
+\documentclass[oneside]{book}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,geometry} 
+\usepackage{caption,graphicx,subfig}
+\usepackage{float}
+\usepackage{tcolorbox}
+\usepackage[cache=false]{minted}
+\usepackage{algorithm,algorithmic}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[title]{appendix}
+\geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+
+%设置页眉
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[C]{\leftmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3mm} 
+\renewcommand{\footrulewidth}{0mm}
+
+%设置定理环境
+\newtheorem{theorem}{Theorem}[chapter]
+
+%标题作者日期
+\title{\Huge \textbf{Template for English Book}}
+\author{\huge Li Xiang}
+\date{}
+\begin{document}
+\maketitle
+
+%目录
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+%正文
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Linear Algebra}
+\section{linear map}
+
+%定理边框
+\begin{tcolorbox}
+[colframe=cyan!40!black,
+title={\begin{theorem}
+[Rank-Nullity]\end{theorem}}]
+The dimension 
+\footnote{The dimension is ...}
+of $V$ is equal to ...
+\end{tcolorbox}
+
+\begin{proof}
+    The rank\footnote{The rank is ...}
+\end{proof}
+According to ...\cite{ref1}
+
+\newpage
+
+%代码
+\section{codes}
+\begin{algorithm}[!h]
+	\caption{PARTITION$(A,p,r)$}%算法标题
+	\textbf{Input: }{$\mathbf{x},
+    \mathbf{y}\in\mathbb{R}^n$}\\
+    \textbf{Output:}
+    {$\mathbf{z}=\mathbf{x}
+    \mathbf{y}^T\in\mathbb{R}^{n\times n}$}
+    \begin{algorithmic}[1]%一行一个标行号
+		\STATE $i=p$
+		\FOR{$j=p$ to $r$}
+		\IF{$A[j]<=0$}
+		\STATE $swap(A[i],A[j])$
+		\STATE $i=i+1$
+		\ENDIF
+		\ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{minted}[linenos,frame=lines]{c++}
+    int main() {
+    printf("hello, world");
+    return 0;
+    }
+\end{minted}
+
+\newpage
+
+%附录
+\begin{appendices}
+\chapter{Multilinear Algebra}
+\end{appendices}
+\newpage
+
+%参考文献
+\begin{thebibliography}{99}
+\bibitem{ref1}Zhang,
+\end{thebibliography}
+
+\end{document}

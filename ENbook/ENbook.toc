@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {1}Linear Algebra}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}linear map}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}codes}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {A}Multilinear Algebra}{3}{appendix.1.A}%

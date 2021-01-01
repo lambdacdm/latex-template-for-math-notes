@@ -1,0 +1,101 @@
+\documentclass[oneside]{ctexbook}
+\setlength{\headheight}{15pt}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,geometry} 
+\usepackage{caption,graphicx,subfig}
+\usepackage{float}
+\usepackage{tcolorbox}
+\usepackage[cache=false]{minted}
+\usepackage{algorithm,algorithmic}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[title]{appendix}
+\geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+
+%设置页眉
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[C]{\leftmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3mm} 
+\renewcommand{\footrulewidth}{0mm}
+
+%设置定理环境
+\newtheorem{theorem}{定理}[chapter]
+
+%标题作者日期
+\title{\Huge \textbf{中文书籍模板}}
+\author{\huge 李想}
+\date{}
+\begin{document}
+\maketitle
+
+%目录
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+%正文
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{线性代数}
+\section{线性映射}
+
+%定理边框
+\begin{tcolorbox}
+[colframe=cyan!40!black,
+title={\begin{theorem}
+[秩-零化度]\end{theorem}}]
+线性空间$V$的维数
+\footnote{维数是指...}
+等于...
+\end{tcolorbox}
+    
+\begin{proof}
+    秩\footnote{秩是...}
+\end{proof}
+根据 ...\cite{ref1}
+
+\newpage
+
+%代码
+\section{代码}
+\begin{algorithm}[!h]
+	\caption{PARTITION$(A,p,r)$}%算法标题
+	\textbf{Input: }{$\mathbf{x},
+    \mathbf{y}\in\mathbb{R}^n$}\\
+    \textbf{Output:}
+    {$\mathbf{z}=\mathbf{x}
+    \mathbf{y}^T\in\mathbb{R}^{n\times n}$}
+    \begin{algorithmic}[1]%一行一个标行号
+		\STATE $i=p$
+		\FOR{$j=p$ to $r$}
+		\IF{$A[j]<=0$}
+		\STATE $swap(A[i],A[j])$
+		\STATE $i=i+1$
+		\ENDIF
+		\ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{minted}[linenos,frame=lines]{c++}
+    int main() {
+    printf("hello, world");
+    return 0;
+    }
+\end{minted}
+
+\newpage
+
+%附录
+\appendix
+\renewcommand{\appendixname}{附录\Alph{section}}
+\chapter{多线性代数}
+\newpage
+
+%参考文献
+\begin{thebibliography}{99}
+    \bibitem{ref1}张，
+\end{thebibliography}
+
+\end{document}

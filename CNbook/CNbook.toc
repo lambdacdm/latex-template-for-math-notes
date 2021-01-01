@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}线性代数}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}线性映射}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}代码}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}多线性代数}{3}{appendix.A}%
